@@ -1,0 +1,19 @@
+Options +FollowSymLinks
+RewriteEngine On # Turn on the rewriting engine
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^query query.html
+RewriteRule ^guide guide.html
+RewriteRule ^credits credits.html
+RewriteRule ^links links.html
+RewriteRule ^sitemap sitemap.html
+RewriteRule ^contacts contacts.html
+RewriteRule ^advquery advquery.html
+RewriteRule ^browse browse.html
+RewriteRule ^itemshow/([0-9]+)$ /itemshow.php?id=$1 [L]
+# RewriteRule ^itemshow/([0-9]+) itemshow.php?id=$1 [NC,L] # Handle requests for "itemshow"
+ #RewriteRule ^itemshow(/)([0-9]+) itemshow.php?id=$2 [NC,L] # Handle requests for "itemshow"
+
+
